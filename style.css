@@ -1,0 +1,119 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  overflow: hidden;
+}
+
+h1 {
+  color: white;
+  z-index: 1;
+  font-size: 3rem;
+  position: absolute;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  overflow: hidden;
+}
+
+.bg::before,
+.bg::after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background-image: radial-gradient(white 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: moveStars 20s linear infinite;
+}
+
+.bg::before {
+  top: -100%;
+  left: -100%;
+}
+
+.bg::after {
+  top: -100%;
+  left: -100%;
+  animation-duration: 40s;
+}
+
+@keyframes moveStars {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50%, 50%);
+  }
+}
+
+.spicy-rice-regular {
+  font-family: "Spicy Rice", serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 6px;
+  font-size: 3rem;
+}
+
+.marquee {
+  position: absolute;
+  top: 10%;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee h1 {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 10s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Efek Teks Mengetik */
+.typing-effect {
+  font-family: "Spicy Rice", cursive;
+  font-size: 2.5rem;
+  color: #fff;
+  border-right: 3px solid white;
+  width: 22ch;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 22ch;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.typing-effect {
+  animation: typing 4s steps(22), blink 0.75s step-end infinite;
+}

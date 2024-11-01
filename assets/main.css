@@ -30,20 +30,22 @@ body {
 }
 .conten-text-max {
   font-family: "Spicy Rice", cursive;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   color: #fff;
   white-space: nowrap; /* Agar teks tidak terpotong ke baris berikutnya */
   overflow: hidden; /* Menyembunyikan teks saat animasi */
   border-right: 3px solid; /* Menambahkan efek kursor */
   animation: blink-cursor 0.7s step-end infinite;
+  display: inline-block;
+  animation: scroll-text 5s linear infinite;
 }
 
 @keyframes blink-cursor {
-  from {
-    border-color: transparent;
+  0% {
+    transform: translateY(100%); /* Start from below the container */
   }
-  to {
-    border-color: #fff;
+  100% {
+    transform: translateY(-100%); /* Move to above the container */
   }
 }
 

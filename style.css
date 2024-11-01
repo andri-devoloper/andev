@@ -149,7 +149,7 @@ h1 {
   flex-direction: column; /* Pastikan arah flex adalah kolom */
   justify-content: center;
   align-items: center;
-  text-align: center; 
+  text-align: center;
 }
 .media-icon {
   display: flex;
